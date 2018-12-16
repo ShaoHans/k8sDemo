@@ -13,10 +13,19 @@ namespace K8S.Service.AppTwo.Controllers
         [HttpGet]
         public IActionResult Host()
         {
-            string serviceName = "K8S_SERVICE_APPTWO";
-            string host = Environment.GetEnvironmentVariable($"{serviceName}_SERVICE_HOST");
-            string port = Environment.GetEnvironmentVariable($"{serviceName}_SERVICE_PORT");
-            return Ok($"{host}:{port}");
+            //string serviceName = "K8S_SERVICE_APPTWO";
+            //string host = Environment.GetEnvironmentVariable($"{serviceName}_SERVICE_HOST");
+            //string port = Environment.GetEnvironmentVariable($"{serviceName}_SERVICE_PORT");
+            //return Ok($"{host}:{port}");
+
+            // 获取yaml中自定义的环境变量
+            var podName = Environment.GetEnvironmentVariable("POD_NAME");
+            if(string.IsNullOrWhiteSpace(podName))
+            {
+                return Ok("empty");
+            }
+
+            return Ok(podName);
         }
     }
 }

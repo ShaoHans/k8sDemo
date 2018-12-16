@@ -12,6 +12,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "K8S.Service.AppOne", "Servi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "K8S.Service.AppTwo", "ServiceDiscovery\K8S.Service.AppTwo\K8S.Service.AppTwo.csproj", "{88AE1B42-2DF9-47D7-8A20-AC16EB2899B4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Volumes", "Volumes", "{7B5EDA5F-616C-4E3D-AFBA-8C8FE55F36AA}"
+	ProjectSection(SolutionItems) = preProject
+		Volumes\postgresql.yaml = Volumes\postgresql.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Secrets", "Secrets", "{64C406A6-481D-4328-9965-5BB8026552D9}"
+	ProjectSection(SolutionItems) = preProject
+		Secrets\postgresql-dockerconfigjson-secret.yaml = Secrets\postgresql-dockerconfigjson-secret.yaml
+		Secrets\postgresql-env-secret.yaml = Secrets\postgresql-env-secret.yaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
